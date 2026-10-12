@@ -1,4 +1,6 @@
 import { Injectable } from '@nestjs/common';
+import { InjectMapper } from '@automapper/nestjs';
+import { Mapper } from '@automapper/core';
 import { createUserDto } from './dto/create-user.dto';
 import { PrismaService } from '../prisma.service';
 import { UpdateUserDto } from './dto/update-user.dto';
@@ -6,7 +8,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 @Injectable()
 export class UsersService {
 
-    constructor(private prisma: PrismaService) {}
+    constructor(private prisma: PrismaService, @InjectMapper() private readonly mapper: any,) {}
     
     getUsers() {
         return this.prisma.user.findMany();

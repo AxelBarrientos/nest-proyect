@@ -5,7 +5,7 @@ export class createUserDto {
     @IsEmail()
     @IsString()
     @IsNotEmpty()
-    email: string
+    email: string 
 
     @IsString()
     @IsNotEmpty()
@@ -13,6 +13,6 @@ export class createUserDto {
 
     @IsString()
     @IsNotEmpty()
-    name: string
+    name: string 
 
-}
+}     

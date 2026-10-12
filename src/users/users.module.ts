@@ -5,10 +5,12 @@ import { NestApplication } from '@nestjs/core';
 import { LoggerMiddleware } from './logger/logger.middleware';
 import { AuthMiddleware } from './auth/auth.middleware';
 import { PrismaService } from '../prisma.service';
+import { UserProfile } from './mappers/user.profile';
+
 
 @Module({
   controllers: [UsersController],
-  providers: [UsersService, PrismaService],
+  providers: [UsersService, PrismaService, UserProfile], 
 })
 export class UsersModule implements NestModule{
   configure(consumer: MiddlewareConsumer) {

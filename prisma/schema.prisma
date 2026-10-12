@@ -9,8 +9,8 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = "postgresql://axel:axelpassword@localhost:5499/proyectdb?schema=public"
+  provider = "mysql"
+  url      = env("DATABASE_URL")
 }
 model User {
   id       Int @id @default(autoincrement())
